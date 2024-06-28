@@ -14,7 +14,7 @@ The default method and VeDBA method are rotation independent and so give the sam
 
 \item{fh}{The high-pass filter cut-off frequency in Hz. This should be chosen to be about half of the stroking rate for the animal (e.g., using dsf.R). Required for the default 'fir' method.}
 
-\item{method}{A character containing either 'wilson' or 'vedba' or 'fir'. This determines the ethod by which the ODBA is calculated. The default method is 'fir'.}
+\item{method}{A character containing either 'wilson' or 'vedba' or 'fir'. This determines the method by which the ODBA is calculated. The default method is 'fir'.}
 
 \item{n}{The rectangular window (moving average) length in samples. This is only needed if using the classic ODBA and VeDBA forms (methods 'wilson' and 'vedba').}
 }
@@ -33,6 +33,6 @@ If applying the default (FIR filtering) method to calculate odba, use the inputs
 BW <- beaked_whale
 e <- odba(A = BW$A$data, sampling_rate = BW$A$sampling_rate, fh = 0.05)
 ba <- list(e = e)
-plott(ba, BW$A$sampling_rate)
+plott_base(ba, BW$A$sampling_rate)
 
 }
