@@ -1,3 +1,44 @@
+# tagtools 0.3.0
+This release removes a dependency, speeds up filtering and decimation via C++, 
+and fixes several bugs.
+
+## Breaking changes
+
+* `m_dist()` documentation clarified and input names changed to match rest of
+   `tagtools` (all now snake case); unused inputs `expStart` and `expEnd` 
+   removed. To update old code, change input names: `smoothDur` to `smooth_dur`,
+   `cumSum` to `cum_sum`, and `baselineStart`, `baselineEnd`, and `BL_COV` to 
+   `baseline_start`, `baseline_end`, and `bl_cov`.
+
+## New features
+
+* read_cats()` now can now read deployments with multiple csv files.
+
+* `dec_dc()` now implements convolution via RCppArmadillo, which speeds it up.
+
+* `gsignal` package dependency replaces `signal`, for speed and flexibility. 
+
+* `prh_predictor1()` and `prh_predictor2()` interactivity is now optional,
+   toggled via a new input argument. 
+
+## Minor improvements and fixes
+
+* `latex2exp` package dependency removed, as requested by CRAN Team.
+
+* `m_dist()` documentation clarified and input names changed to match rest of
+   `tagtools` (all now snake case); unused inputs `expStart` and `expEnd` 
+   removed. To update old code, change input names: `smoothDur` to `smooth_dur`,
+   `cumSum` to `cum_sum`, and `baselineStart`, `baselineEnd`, and `BL_COV` to 
+   `baseline_start`, `baseline_end`, and `bl_cov`.
+   
+* `norm2()` checks that output is a column vector (1-column matrix).
+
+* `o2p()` and `read_cats()` helper functions moved outside function definitions.
+
+* `save_nc()` now accepts dots input.
+
+* `add_nc()` works correctly even if sensor data stream name `vname` not input. 
+
 # tagtools 0.2.0
 
 This release adds several new features and fixes several bugs.
